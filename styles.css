@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Muli:wght@400;700&display=swap');
+
+
+:root {
+
+    /*----------- Blue --------------*/
+    --bg-color: steelblue;
+    --form-bg-color: rgba(0,0,0,.5);
+    --text-color: white;
+    --focus: lightblue;
+    --btn-color: black;
+    --focus-input: rgb(94, 163, 219);
+    --link: steelblue;
+    --link-hover: rgb(98, 170, 230); 
+
+    /*----------- Black --------------*/
+    /* --bg-color: black;
+    --form-bg-color: rgba(24, 24, 24, 0.8);
+    --text-color: white;
+    --focus: rgb(46, 44, 44);
+    --focus-input: steelblue;
+    --btn-color: rgb(207, 204, 204);
+    --link: steelblue;
+    --link-hover: rgb(98, 170, 230); */
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.light {
+    --bg-color: darkgray;
+    --form-bg-color: rgba(255,255,255,.5);
+    --text-color: black;
+    --focus: rgb(20, 20, 20);
+    --btn-color: white;
+}
+
+body {
+
+    font-family: 'Muli', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    flex-direction: column;
+}
+
+i {
+    cursor: pointer;
+    transform: translateY(-20px);
+    font-size: 20px;
+}
+
+p {
+    margin: 30px;
+}
+
+.container {
+
+    background-color: var(--form-bg-color);
+    padding: 20px 40px;
+    border-radius: 5px;
+}
+
+.container h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.container a {
+    text-decoration: none;
+    color: var(--link);
+}
+
+.container a:hover {
+    color: var(--link-hover);
+}
+
+.btn {
+    width: 100%;
+    background-color: var(--focus);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: inherit;
+    color: var(--btn-color);
+}
+
+.btn:active {
+    transform: scale(.98);
+}
+
+.form-control {
+    padding: 20px 0 40px;
+    position: relative;
+}
+
+.form-control input {
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid var(--text-color);
+    display: block;
+    width: 100%;
+    outline: none;
+    padding: 15px 0;
+    font-size: 18px;
+    color: var(--text-color);
+}
+
+.form-control input:focus,
+.form-control input:valid {
+    border-color: var(--focus-input);
+}
+
+.form-control label span {
+    display: inline-block;
+    transition: 0.3s cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+
+.form-control input:focus + label span, 
+.form-control input:valid + label span {
+    --focus: rgb(119, 117, 117);
+    transform: translateY(-30px);
+    color: var(--focus);
+    font-size: 18px;
+}
+
+.form-control label {
+    position: absolute;
+    top: 35%;
+}
